@@ -1,0 +1,16 @@
+rootProject.name = 'hexagonal-kotlin-template'
+
+include('domain')
+include('main')
+
+include('rest')
+project(':rest').projectDir = file('primary/rest')
+
+include('kafka-consumer')
+project(':kafka-consumer').projectDir = file('primary/kafka-consumer')
+
+include('mysql')
+project(':mysql').projectDir = file('secondary/mysql')
+
+include('kafka-producer')
+project(':kafka-producer').projectDir = file('secondary/kafka-producer')

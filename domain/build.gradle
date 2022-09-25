@@ -1,0 +1,6 @@
+dependencies {
+    implementation(
+            "org.springframework:spring-aspects",
+            "org.springframework:spring-tx",
+    )
+}

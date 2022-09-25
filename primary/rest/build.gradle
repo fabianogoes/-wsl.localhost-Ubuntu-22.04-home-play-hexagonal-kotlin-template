@@ -1,0 +1,13 @@
+dependencies {
+    api(
+            "javax.validation:validation-api:${validationApiVersion}"
+    )
+
+    implementation(
+            project(':domain'),
+            "org.springframework.boot:spring-boot-starter-web:${springBootVersion}",
+            "org.springframework.boot:spring-boot-starter-validation:${springBootVersion}",
+            "org.springframework.boot:spring-boot-starter-hateoas:${springBootVersion}",
+            "com.fasterxml.jackson.module:jackson-module-kotlin:${jacksonModuleVersion}",
+    )
+}

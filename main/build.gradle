@@ -1,0 +1,28 @@
+apply plugin: "org.springframework.boot"
+apply plugin: "io.spring.dependency-management"
+
+bootJar {
+    baseName = ''
+}
+
+dependencies {
+    implementation(
+            project(":domain"),
+            project(":rest"),
+            project(":mysql"),
+            project(":kafka-consumer"),
+            project(":kafka-producer"),
+
+            "org.springframework.boot:spring-boot-starter:$springBootVersion",
+            "org.springframework.boot:spring-boot-starter-undertow:$springBootVersion",
+            "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion"
+    )
+
+
+    configurations {
+        compile.exclude module: 'spring-boot-starter-tomcat'
+        compile.exclude group: 'org.apache.tomcat'
+        implementation.exclude module: 'spring-boot-starter-tomcat'
+        implementation.exclude group: 'org.apache.tomcat'
+    }
+}

@@ -1,0 +1,6 @@
+dependencies {
+    implementation(
+            project(":domain"),
+            "org.springframework.kafka:spring-kafka:${springKafkaVersion}",
+    )
+}
